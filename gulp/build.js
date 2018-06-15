@@ -73,6 +73,7 @@ gulp.task('fonts', function () {
   return gulp.src($.mainBowerFiles())
     .pipe($.filter('**/*.{eot,otf,svg,ttf,woff,woff2}'))
     .pipe($.flatten())
+    .pipe($.replace('../../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
